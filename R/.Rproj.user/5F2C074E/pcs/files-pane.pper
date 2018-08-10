@@ -1,0 +1,9 @@
+{
+    "path" : "~/MAIN/Overstock/InternalSearch/Query2Topic/R",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
