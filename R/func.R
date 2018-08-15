@@ -1,10 +1,3 @@
-library(tidyverse)
-library(stringr)
-library(pbapply)
-library(parallel)
-library(textstem)
-
-
 disclaimer <- "While we aim to supply accurate product information it is sourced by manufacturers suppliers and marketplace sellers and has not been provided by Overstock"
 disclaimer2 <- "While we aim to supply accurate product information, it is sourced by manufacturers, suppliers and marketplace sellers, and has not been provided by Overstock"
 
@@ -124,21 +117,10 @@ preprocess_data <- function(db_export_file, out_file, ...) {
 
 
 # testing -----------------------------------------------------------------
-
-preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
-
-preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
-
-
+# 
+# preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
+# 
+# preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
 
 
 
-data_in <- read_csv("~/Desktop/test_out_full.csv")
-
-data_in <- 
-  data_in %>% 
-  filter(word_count > 60) %>% 
-  select(text) %>% 
-  sample_n(10000)
-
-write_delim(data_in, path = "../data/product_text/corpus_clean_2_10g_sample.txt", delim = "\n", col_names = FALSE)
