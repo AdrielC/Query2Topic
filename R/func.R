@@ -40,7 +40,7 @@ split_text_file <- function(in.file.path, line.count = 10000) {
 process_pipe <- function(product_text) {
   clean_df <- product_text %>% 
     unite(., text, PRO_NAME:PRO_SHORT_NAME, sep = ". ", remove = TRUE) %>% 
-    mutate(text = map_chr(text, clean_text)) %>% 
+    mutate(text = map_chr(text, clean_text)) %>%
     mutate(word_count = str_count(text, "\\S+"))
 }
 
@@ -118,9 +118,8 @@ preprocess_data <- function(db_export_file, out_file, ...) {
 
 # testing -----------------------------------------------------------------
 # 
-# preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
+# preprocess_data("../data/product_text/table_export_DATA_utf.csv", "../data/processed_corps/clean_full.txt", line.count = 10000)
 # 
 # preprocess_data("../data/test/test_chunk_utf.csv", "../data/test/test_out.csv", line.count = 2)
 
-
-
+# 
